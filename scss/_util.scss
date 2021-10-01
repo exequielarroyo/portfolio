@@ -10,7 +10,7 @@ html {
         transition: all .5s ease-in-out; // don't work
         background-color: $color-secondary;
         border-radius: 20px;
-        border: 2px solid #030303;
+        border: 2px solid $bg-color;
     }
      ::-webkit-scrollbar-thumb:hover {
         background-color: $color-secondary;
