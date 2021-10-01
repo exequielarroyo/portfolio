@@ -1,4 +1,125 @@
 @import 'resets';
-h1 {
-    background-color: pink;
+@import 'variables';
+@import 'media-queries';
+@import 'util';
+body {
+    overflow: overlay;
+    background-color: $bg-color;
+    background: linear-gradient(120deg, #282F33, #030303) fixed;
+    font-family: $font-family;
+    .container {
+        color: $color-white;
+        height: 100vh;
+        margin: 0 auto;
+        max-width: 1280px;
+        @include device-size(1280px) {
+            padding: 0 20px;
+        }
+    }
+    header {
+        padding: 20px 0;
+        top: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0);
+        backdrop-filter: blur(20px);
+        position: fixed;
+        @include device-size(1366px) {
+            padding: 20px;
+        }
+    }
+}
+
+nav {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        li {
+            display: inline;
+            font-size: smaller;
+            a {
+                color: $color-white;
+                text-decoration: none;
+                border-bottom: 1px solid rgba($color-secondary, 0.0);
+                transition: border-bottom .15s ease-out;
+            }
+            a:hover {
+                border-bottom: 1px solid $color-white;
+            }
+            img {
+                width: 60px;
+            }
+        }
+    }
+}
+
+#social-links {
+    position: fixed;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    a {
+        display: block;
+        font-size: smaller;
+        color: $color-white;
+        text-decoration: none;
+        border-left: 1px solid rgba($color-secondary, 0.0);
+        transition: border-left .15s ease-out;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+    a:hover {
+        border-left: 1px solid $color-white;
+    }
+    #linkedin {
+        margin: 20px 0;
+    }
+    @include device-size(1280px) {
+        right: 14px;
+    }
+}
+
+.about {
+    padding-top: 80px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    h2 {
+        margin-top: 0;
+    }
+    .name {
+        font-size: smaller;
+        justify-self: end;
+        align-self: flex-end;
+        color: $color-secondary;
+        p {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+#projects {
+    height: 100vh;
+}
+
+#contact {
+    height: 100vh;
+}
+
+// ignore this for now
+.card {
+    padding: 20px;
+    margin: 40px auto 0 auto;
+    width: 80%;
+    height: 90vh;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    // background-color: $color-secondary;
+    background-image: linear-gradient(120deg, #282F33, #030303);
 }
